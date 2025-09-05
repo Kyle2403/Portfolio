@@ -23,7 +23,9 @@ const Page =  () => {
   useEffect(() => {
     const fetchSession = async () => {
       try{
+        const requestStart = Date.now();
         const res = await fetch(`${backendUrl}/session/${id}`);
+        const requestEnd = Date.now();
         if (!res.ok){
           router.replace("/games");
           return;
@@ -36,7 +38,19 @@ const Page =  () => {
           router.replace("/games");
           return;
         }
+        console.log('=== TIMER DEBUG ===');
+        console.log('Request latency (ms):', requestEnd - requestStart);
+        console.log('Backend endTime (raw):', data.endTime);
+        console.log('Backend duration:', data.duration);
+        console.log('Frontend now (local):', now.toISOString());
+        console.log('Frontend now (UTC):', new Date().toUTCString());
+        console.log('Parsed endTime:', end.toISOString());
+        
         let remaining = Math.floor((end.getTime() - now.getTime()) / 1000);
+        console.log('Calculated remaining:', remaining);
+        console.log('Expected (duration):', data.duration);
+        console.log('Difference:', remaining - data.duration);
+        console.log('==================');
         setTime(remaining);
         fetchNumber();
         setLoading(false);
