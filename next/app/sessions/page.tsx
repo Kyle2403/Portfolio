@@ -5,8 +5,8 @@ import NavigationBar from "../components/NavigationBar"
 import Footer from "../components/Footer"
 const SessionHistory = async () => {
     let sessions: GameSession[] = [];
-    //const res = await fetch("http://backend:5271/session/");
-    const res = await fetch("http://localhost:5271/session/");
+    const backendUrl =  process.env.BACKEND_URL || "http://localhost:5271";
+    const res = await fetch(`${backendUrl}/session/`);
     sessions = await res.json();
     return (
         <div className="flex flex-col min-h-screen">

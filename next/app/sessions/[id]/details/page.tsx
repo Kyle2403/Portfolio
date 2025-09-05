@@ -9,8 +9,9 @@ const Page = () => {
     const {id} = useParams();
     const [session, setSession] = useState<GameSession | null>(null)
     useEffect(() => {
+        const backendUrl = process.env.BACKEND_URL || "http://localhost:5271";
         const fetchSession = async () => {
-            const res = await fetch(`http://localhost:5271/session/${id}`)
+            const res = await fetch(`${backendUrl}/session/${id}`)
             const data: GameSession = await res.json()
             setSession(data)
         }

@@ -10,7 +10,8 @@ const Page =  () => {
   const pageSize = 2; // how many per page
   useEffect(() => {
     const fetchGames = async () => {
-      const res = await fetch("http://localhost:5271/game", { cache: "no-store" });
+      const backendUrl = process.env.BACKEND_URL || "http://localhost:5271";
+      const res = await fetch(`${backendUrl}/game`, { cache: "no-store" });
       const data: Game[] = await res.json();
       setGames(data);
       

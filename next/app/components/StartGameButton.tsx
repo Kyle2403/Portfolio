@@ -20,7 +20,8 @@ const StartGameButton = ({ gameId }: StartGameButtonProps) => {
     }
 
     try {
-      const playerRes = await fetch("http://localhost:5271/player", {
+      const backendUrl = process.env.BACKEND_URL || "http://localhost:5271";
+      const playerRes = await fetch(`${backendUrl}/player`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username: playerName }),
@@ -34,7 +35,7 @@ const StartGameButton = ({ gameId }: StartGameButtonProps) => {
 
       const player = await playerRes.json();
 
-      const sessionRes = await fetch("http://localhost:5271/session", {
+      const sessionRes = await fetch(`${backendUrl}/session`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

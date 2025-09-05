@@ -70,17 +70,13 @@ const GameForm = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:5271/game", {
+      const backendUrl = process.env.BACKEND_URL || "http://localhost:5271";
+      const res = await fetch(`${backendUrl}/game`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload)
       })
-      const data = await res.json();
-      // if (!res.ok) {
-      //   // Use the message from the API
-      //   alert(data.message || "Failed to create game");
-      //   return;
-      // }
+
 
       alert("Game created successfully!")
       // back to games page

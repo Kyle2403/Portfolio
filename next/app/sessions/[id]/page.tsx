@@ -19,10 +19,11 @@ const Page =  () => {
   const [number, setNumber] = useState<number | null>(null);
   const answerIdRef = useRef<number | null>(null);
   const [input, setInput] = useState("")
+  const backendUrl = process.env.BACKEND_URL || "http://localhost:5271";
   useEffect(() => {
     const fetchSession = async () => {
       try{
-        const res = await fetch(`http://localhost:5271/session/${id}`);
+        const res = await fetch(`${backendUrl}/session/${id}`);
         if (!res.ok){
           router.replace("/games");
           return;
@@ -67,7 +68,7 @@ const Page =  () => {
 
   const fetchNumber = async () => {
     try {
-      const res = await fetch(`http://localhost:5271/session/${id}/random`, {
+      const res = await fetch(`${backendUrl}/session/${id}/random`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
       })
@@ -90,7 +91,7 @@ const Page =  () => {
     if (!answerIdRef.current) return
     if (!input.trim()) return
     try {
-      const res = await fetch(`http://localhost:5271/answer/${answerIdRef.current}`, {
+      const res = await fetch(`${backendUrl}/answer/${answerIdRef.current}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ response: input }),
@@ -109,7 +110,7 @@ const Page =  () => {
   }
   const endSession = async () => {
     try {
-      const res = await fetch(`http://localhost:5271/session/${id}`, {
+      const res = await fetch(`${backendUrl}/session/${id}`, {
         method: "PATCH",
       })
       if (!res.ok) {
