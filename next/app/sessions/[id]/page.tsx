@@ -23,34 +23,25 @@ const Page =  () => {
   useEffect(() => {
     const fetchSession = async () => {
       try{
-        const requestStart = Date.now();
         const res = await fetch(`${backendUrl}/session/${id}`);
-        const requestEnd = Date.now();
         if (!res.ok){
           router.replace("/games");
           return;
         }
         const data: GameSession = await res.json();
-        console.log(data)
+        //console.log(data)
         const end = new Date(data.endTime);
         const now = new Date()
+
         if (now > end || data.isDone){
           router.replace("/games");
           return;
         }
-        console.log('=== TIMER DEBUG ===');
-        console.log('Request latency (ms):', requestEnd - requestStart);
-        console.log('Backend endTime (raw):', data.endTime);
-        console.log('Backend duration:', data.duration);
-        console.log('Frontend now (local):', now.toISOString());
-        console.log('Frontend now (UTC):', new Date().toUTCString());
-        console.log('Parsed endTime:', end.toISOString());
-        
-        let remaining = Math.floor((end.getTime() - now.getTime()) / 1000);
-        console.log('Calculated remaining:', remaining);
-        console.log('Expected (duration):', data.duration);
-        console.log('Difference:', remaining - data.duration);
-        console.log('==================');
+
+        const start = new Date(data.startTime);
+        const elapsedMs = now.getTime() - start.getTime();
+        const elapsedSeconds = Math.floor(elapsedMs / 1000);
+        const remaining = Math.max(0, data.duration - elapsedSeconds);
         setTime(remaining);
         fetchNumber();
         setLoading(false);
