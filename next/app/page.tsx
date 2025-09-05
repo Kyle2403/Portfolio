@@ -38,7 +38,7 @@ export default function Home() {
             <div className='pl-20'>
                 <h1 className="text-5xl font-bold">Ky Le</h1>
                 <p className="py-4 xl:pr-36 font-semibold">
-                  I'm a software developer and data scientist passionate about creating meaningful technology solutions.
+                  I&apos;m a software developer and data scientist passionate about creating meaningful technology solutions.
                   I enjoy working at the intersection of AI, web development, and data science.
                 </p>
                 <div className='space-x-3'>
@@ -166,7 +166,7 @@ export default function Home() {
               <ul className="list-disc list-inside mt-2 text-gray-100">
                 <li>Major in Software Development and Data Science</li>
                 <li>Overall WAM: 83</li>
-                <li>Dean's List of Excellence in Academic Performance (2024)</li>
+                <li>Dean&apos; List of Excellence in Academic Performance (2024)</li>
               </ul>
             </div>
           <div className='flex flex-col w-full items-center'>
