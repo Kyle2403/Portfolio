@@ -43,11 +43,7 @@ const Page =  () => {
         const elapsedSeconds = Math.max(0, Math.floor(elapsedMs / 1000)); // Don't allow negative elapsed time
         const remaining = Math.max(0, data.duration - elapsedSeconds);
 
-        console.log('=== FIXED CALCULATION ===');
-        console.log('Raw elapsed seconds:', Math.floor(elapsedMs / 1000));
-        console.log('Clamped elapsed seconds:', elapsedSeconds);
-        console.log('Remaining:', remaining);
-        setTime(remaining - 1);
+        setTime(remaining - 2);
         fetchNumber();
         setLoading(false);
       }catch (err) {
@@ -84,6 +80,7 @@ const Page =  () => {
       })
       const data: RandomNumber = await res.json()
       if (!res.ok) {
+        alert("Out of time or invalid answer id")
         return
       }
       setNumber(data.number)
