@@ -114,7 +114,7 @@ const StartGameButton = ({ gameId }: StartGameButtonProps) => {
                 max={3600}
               />
             </div>
-            <p className='font-medium italic text-xs mb-3'>*Make sure to read the rules before starting, they wont be displayed during the game session.</p>
+            <p className='font-medium italic text-xs mb-3'>*Make sure to read the rules before starting. Answers are case-insensitive</p>
 
             <div className="flex justify-end gap-3">
               <button
