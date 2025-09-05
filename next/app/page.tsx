@@ -96,7 +96,7 @@ export default function Home() {
                       <img src="/icons/aws.svg" alt="AWS" className="h-12 w-auto transform transition duration-300 hover:scale-110"/>
                       <img src="/icons/github.svg" alt="GitHub" className="h-12 w-auto transform transition duration-300 hover:scale-110"/>
                       <img src="/icons/vercel.svg" alt="Vercel" className="h-12 w-auto transform transition duration-300 hover:scale-110"/>
-                      <img src="/icons/render.svg" alt="Render" className="h-12 w-auto transform transition duration-300 hover:scale-110"/>
+                      <img src="/icons/render.svg" alt="Render" className="h-12 w-auto transform transition duration-300 hover:scale-110 "/>
                     </div>
                 </div>
             
