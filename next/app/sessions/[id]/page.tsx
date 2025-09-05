@@ -30,7 +30,7 @@ const Page =  () => {
         }
         const data: GameSession = await res.json();
         console.log(data)
-        const end = new Date(data.endTime + "Z");
+        const end = new Date(data.endTime);
         const now = new Date()
         if (now > end || data.isDone){
           router.replace("/games");
