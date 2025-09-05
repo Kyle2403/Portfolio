@@ -13,7 +13,7 @@ const Page =  () => {
       const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5271";
       const res = await fetch(`${backendUrl}/game`, { cache: "no-store" });
       const data: Game[] = await res.json();
-      setGames(data);
+      setGames(data.slice().sort((a, b) => b.gameId - a.gameId));
       
     };
     fetchGames();
@@ -31,8 +31,7 @@ const Page =  () => {
             <h1 className='font-black text-2xl px-6 pb-2 pt-2  text-white'>All Games</h1>
             <div className=''>
                   <div className="">
-                    {currentGames.slice() 
-                    .sort((a, b) => b.gameId - a.gameId)
+                    {currentGames
                     //.slice(0, 2)
                     .map((game, i) => (
                       <GameCard
