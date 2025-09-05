@@ -42,6 +42,15 @@ const Page =  () => {
         const elapsedMs = now.getTime() - start.getTime();
         const elapsedSeconds = Math.floor(elapsedMs / 1000);
         const remaining = Math.max(0, data.duration - elapsedSeconds);
+
+        console.log('=== NEW CALCULATION DEBUG ===');
+        console.log('Start time:', start.toISOString());
+        console.log('Now time:', now.toISOString());
+        console.log('Elapsed MS:', elapsedMs);
+        console.log('Elapsed seconds:', elapsedSeconds);
+        console.log('Duration:', data.duration);
+        console.log('Calculated remaining:', remaining);
+        console.log('Clock difference (now - start):', elapsedMs / 1000, 'seconds');
         setTime(remaining);
         fetchNumber();
         setLoading(false);
