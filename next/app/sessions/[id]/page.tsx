@@ -47,7 +47,7 @@ const Page =  () => {
         console.log('Raw elapsed seconds:', Math.floor(elapsedMs / 1000));
         console.log('Clamped elapsed seconds:', elapsedSeconds);
         console.log('Remaining:', remaining);
-        setTime(remaining);
+        setTime(remaining - 1);
         fetchNumber();
         setLoading(false);
       }catch (err) {
@@ -105,7 +105,7 @@ const Page =  () => {
         body: JSON.stringify({ response: input }),
       })
       if (!res.ok) {
-        alert("Bad request or invalid answer id")
+        alert("Out of time or invalid answer id")
         return
       }
       setCount((c) => c + 1)
