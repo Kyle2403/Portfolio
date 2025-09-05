@@ -31,7 +31,7 @@ const SessionHistory = async () => {
                                 {session.isDone ? <div className="">Completed by <span className="italic font-bold">{session.playerName}</span></div> : "Aborted by player"}
                             </span>
                         </div>
-                        <p className="text-gray-600 text-md mt-1">{new Date(session.startTime+"Z").toLocaleString()}</p>
+                        <p className="text-gray-600 text-md mt-1">{new Date(session.startTime).toLocaleString()}</p>
                         <div className="mt-2 flex gap-6">
                         <p>✅ {session.scoreCorrect}</p>
                         <p>❌ {session.scoreIncorrect}</p>
