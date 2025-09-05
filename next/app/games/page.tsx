@@ -31,7 +31,8 @@ const Page =  () => {
             <h1 className='font-black text-2xl px-6 pb-2 pt-2  text-white'>All Games</h1>
             <div className=''>
                   <div className="">
-                    {currentGames
+                    {currentGames.slice() 
+                    .sort((a, b) => b.gameId - a.gameId)
                     //.slice(0, 2)
                     .map((game, i) => (
                       <GameCard
