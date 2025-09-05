@@ -19,7 +19,7 @@ const Page =  () => {
   const [number, setNumber] = useState<number | null>(null);
   const answerIdRef = useRef<number | null>(null);
   const [input, setInput] = useState("")
-  const backendUrl = process.env.BACKEND_URL || "http://localhost:5271";
+  const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5271";
   useEffect(() => {
     const fetchSession = async () => {
       try{

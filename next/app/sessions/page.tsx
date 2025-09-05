@@ -5,7 +5,7 @@ import NavigationBar from "../components/NavigationBar"
 import Footer from "../components/Footer"
 const SessionHistory = async () => {
     let sessions: GameSession[] = [];
-    const backendUrl =  process.env.BACKEND_URL || "http://localhost:5271";
+    const backendUrl =  process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5271";
     const res = await fetch(`${backendUrl}/session/`);
     sessions = await res.json();
     return (

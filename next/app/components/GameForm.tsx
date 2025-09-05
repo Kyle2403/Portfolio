@@ -70,7 +70,7 @@ const GameForm = () => {
     }
 
     try {
-      const backendUrl = process.env.BACKEND_URL || "http://localhost:5271";
+      const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5271";
       const res = await fetch(`${backendUrl}/game`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },

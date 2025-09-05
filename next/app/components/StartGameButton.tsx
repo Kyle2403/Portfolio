@@ -20,7 +20,7 @@ const StartGameButton = ({ gameId }: StartGameButtonProps) => {
     }
 
     try {
-      const backendUrl = process.env.BACKEND_URL || "http://localhost:5271";
+      const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5271";
       const playerRes = await fetch(`${backendUrl}/player`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
