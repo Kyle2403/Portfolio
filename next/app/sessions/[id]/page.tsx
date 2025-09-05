@@ -40,17 +40,13 @@ const Page =  () => {
 
         const start = new Date(data.startTime);
         const elapsedMs = now.getTime() - start.getTime();
-        const elapsedSeconds = Math.floor(elapsedMs / 1000);
+        const elapsedSeconds = Math.max(0, Math.floor(elapsedMs / 1000)); // Don't allow negative elapsed time
         const remaining = Math.max(0, data.duration - elapsedSeconds);
 
-        console.log('=== NEW CALCULATION DEBUG ===');
-        console.log('Start time:', start.toISOString());
-        console.log('Now time:', now.toISOString());
-        console.log('Elapsed MS:', elapsedMs);
-        console.log('Elapsed seconds:', elapsedSeconds);
-        console.log('Duration:', data.duration);
-        console.log('Calculated remaining:', remaining);
-        console.log('Clock difference (now - start):', elapsedMs / 1000, 'seconds');
+        console.log('=== FIXED CALCULATION ===');
+        console.log('Raw elapsed seconds:', Math.floor(elapsedMs / 1000));
+        console.log('Clamped elapsed seconds:', elapsedSeconds);
+        console.log('Remaining:', remaining);
         setTime(remaining);
         fetchNumber();
         setLoading(false);
