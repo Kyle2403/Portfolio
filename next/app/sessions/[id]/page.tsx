@@ -46,7 +46,7 @@ const Page =  () => {
         console.log('=== FIXED CALCULATION ===');
         console.log('Raw elapsed seconds:', Math.floor(elapsedMs / 1000));
         console.log('Clamped elapsed seconds:', elapsedSeconds);
-        console.log('Remaining:', remaining - 2);
+        console.log('Remaining:', remaining);
         setTime(remaining);
         fetchNumber();
         setLoading(false);
@@ -84,7 +84,6 @@ const Page =  () => {
       })
       const data: RandomNumber = await res.json()
       if (!res.ok) {
-        router.replace("/games")
         return
       }
       setNumber(data.number)
@@ -92,7 +91,6 @@ const Page =  () => {
       setInput("") // reset input field
     } catch (err) {
       alert("Failed to fetch number"+ err)
-      router.replace("/games")
     }
   }
 
@@ -108,14 +106,12 @@ const Page =  () => {
       })
       if (!res.ok) {
         alert("Bad request or invalid answer id")
-        router.replace("/games")
         return
       }
       setCount((c) => c + 1)
       fetchNumber() // immediately load next question
     } catch (err) {
       alert("Failed to submit answer "+ err)
-      router.replace("/games")
     }
   }
   const endSession = async () => {
