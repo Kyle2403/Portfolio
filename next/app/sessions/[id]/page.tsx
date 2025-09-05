@@ -46,7 +46,7 @@ const Page =  () => {
         console.log('=== FIXED CALCULATION ===');
         console.log('Raw elapsed seconds:', Math.floor(elapsedMs / 1000));
         console.log('Clamped elapsed seconds:', elapsedSeconds);
-        console.log('Remaining:', remaining);
+        console.log('Remaining:', remaining - 2);
         setTime(remaining);
         fetchNumber();
         setLoading(false);
