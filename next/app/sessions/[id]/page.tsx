@@ -32,16 +32,11 @@ const Page =  () => {
         console.log(data)
         const end = new Date(data.endTime);
         const now = new Date()
-        const start = new Date(data.startTime); // UTC
-
         if (now > end || data.isDone){
           router.replace("/games");
           return;
         }
-        const nowUTC = new Date(now.getTime() + (now.getTimezoneOffset() * 60000));
-    
-        const elapsedSeconds = Math.floor((nowUTC.getTime() - start.getTime()) / 1000);
-        const remaining = Math.max(0, data.duration - elapsedSeconds);
+        let remaining = Math.floor((end.getTime() - now.getTime()) / 1000);
         setTime(remaining);
         fetchNumber();
         setLoading(false);
