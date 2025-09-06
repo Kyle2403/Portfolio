@@ -11,8 +11,10 @@ import { GiGamepad } from 'react-icons/gi'
 
 export default async function Home() {
   const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5271";
-  fetch(`${backendUrl}/game`, { cache: "no-store" }).catch(() => {});
-  return (
+  fetch(`${backendUrl}/game`, { cache: "no-store" })
+    .then(res => res.json()) 
+    .then(data => console.log("data"))
+    .catch(() => {});  return (
     
     // flex grow + flex flex col min-h-screen on parent to make the main take up rest of content after footer is set
     <div className="flex flex-col text-white ">
