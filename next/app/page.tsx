@@ -9,7 +9,9 @@ import { GiGamepad } from 'react-icons/gi'
 
 
 
-export default function Home() {
+export default async function Home() {
+  const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5271";
+  fetch(`${backendUrl}/game`, { cache: "no-store" }).catch(() => {});
   return (
     
     // flex grow + flex flex col min-h-screen on parent to make the main take up rest of content after footer is set
