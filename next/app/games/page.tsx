@@ -31,20 +31,21 @@ const Page =  () => {
             <h1 className='font-black text-2xl px-6 pb-2 pt-2  text-white'>All Games</h1>
             <div className=''>
                   <div className="">
-                    {currentGames
-                    //.slice(0, 2)
-                    .map((game, i) => (
-                      <GameCard
-                        key = {game.gameId}
-                        gameId={game.gameId}
-                        gameName = {game.gameName}
-                        author = {game.author}
-                        rangeMin={game.rangeMin}
-                        rangeMax={game.rangeMax}
-                        rules={game.rules.sort((a, b) => a.divisor - b.divisor)}
-                      //   onStart={()=> handleStartGame(game.gameId)} 
-                      />
-                    ))}
+                    {currentGames.length === 0 ? (
+                        <p className="text-white p-4">Waking backend... please wait</p>
+                      ) : (
+                        currentGames.map((game) => (
+                          <GameCard
+                            key={game.gameId}
+                            gameId={game.gameId}
+                            gameName={game.gameName}
+                            author={game.author}
+                            rangeMin={game.rangeMin}
+                            rangeMax={game.rangeMax}
+                            rules={game.rules.sort((a, b) => a.divisor - b.divisor)}
+                          />
+                        ))
+                      )}
                     </div>
                   </div>
               </div>
