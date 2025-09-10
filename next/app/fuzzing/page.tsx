@@ -25,7 +25,7 @@ const FuzzingThesisPage = () => {
             <h1 className="text-3xl font-bold text-slate-800">Statistical Guidance for Fuzzing Campaigns</h1>
           </div>
           <p className="text-lg text-slate-600 leading-relaxed mb-4">
-          This project explores a stopping rule for fuzzing campaigns, but this page isn’t meant to explain all the details. 
+          This project explores a stopping rule for fuzzing campaigns, but this page isn&rsquo;t meant to explain all the details. 
           Instead, it highlights my data visualization and web development skills by presenting the key figures and insights.
 
           </p>
@@ -72,7 +72,7 @@ const FuzzingThesisPage = () => {
             The Problem
           </h2>
           <p className="text-slate-700 leading-relaxed">
-            Fuzzing is a powerful way to find software bugs, but security teams often let these tests run endlessly without knowing when they’ve already caught most issues. This project tackles this by evaluating a stopping rule proposed by earlier study.
+            Fuzzing is a powerful way to find software bugs, but security teams often let these tests run endlessly without knowing when they have already caught most issues. This project tackles this by evaluating a stopping rule proposed by earlier study.
           </p>
         </div>
 
@@ -140,7 +140,7 @@ const FuzzingThesisPage = () => {
                   <div className="p-4 bg-red-50 rounded-lg border border-red-200">
                     <h3 className="font-semibold text-red-800 mb-2">Critical Discovery</h3>
                     <p className="text-red-700 text-sm">
-                      All seven statistical estimators consistently predict "false peaks" - suggesting saturation while significant coverage remains undiscovered.
+                      All seven statistical estimators consistently predict false peaks - suggesting saturation while significant coverage remains undiscovered.
                     </p>
                   </div>
                   <div className="p-4 bg-yellow-50 rounded-lg border border-yellow-200">

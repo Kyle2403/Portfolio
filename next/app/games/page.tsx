@@ -4,6 +4,9 @@ import NavigationBar from '../components/NavigationBar'
 import GameCard from '../components/GameCard'
 import Footer from "../components/Footer"
 import BreadCrumbs from "../components/BreadCrumbs";
+import { FaPlus } from "react-icons/fa";
+import Link from "next/link";
+
 const Page =  () => {
   const [games, setGames] = useState<Game[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -23,11 +26,11 @@ const Page =  () => {
   const startIndex = (currentPage - 1) * pageSize;
   const currentGames = games.slice(startIndex, startIndex + pageSize);
   return (
-    <main className="flex flex-col min-h-screen">
+    <main className="flex flex-col min-h-screen bg-black/40">
         <NavigationBar/>
         <BreadCrumbs links={[{text: "Games", href:""}]}></BreadCrumbs>
         <div className="flex-grow">
-          <div className="bg-black/40">
+          <div className="">
             <h1 className='font-black text-2xl px-6 pb-2 pt-2  text-white'>All Games</h1>
             <div className=''>
                   <div className="">
@@ -47,6 +50,16 @@ const Page =  () => {
                         ))
                       )}
                     </div>
+                    <div className="flex justify-center mt-6">
+                      <Link
+                        href="/games/new"
+                        className="w-14 h-14 bg-blue-700 hover:bg-blue-900 text-white rounded-full flex items-center justify-center text-2xl shadow-lg transition-colors"
+                        title="Make a New Game"
+                      >
+                        <FaPlus />
+                      </Link>
+                    </div>
+                    
                   </div>
               </div>
             
@@ -71,6 +84,8 @@ const Page =  () => {
               </button>
           </div>
           <Footer></Footer>
+          
+
     </main>
   )
 }
