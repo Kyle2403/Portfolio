@@ -2,9 +2,9 @@ import Link from 'next/link'
 import Footer from './components/Footer'
 import NavigationBar from './components/NavigationBar'
 import ExperienceCard from './components/ExperienceCard'
-import { FaFilePdf, FaEnvelope, FaPhone,FaLinkedin, FaUser, FaRobot, FaAddressCard, FaCode, FaBriefcase,FaGraduationCap, FaChevronUp  } from 'react-icons/fa';
+import { FaEnvelope, FaPhone,FaLinkedin, FaUser, FaRobot, FaAddressCard, FaCode, FaBriefcase,FaGraduationCap, FaChevronUp  } from 'react-icons/fa';
 import { FaMap } from 'react-icons/fa'
-import { GiGamepad } from 'react-icons/gi'
+import { FaFolderOpen } from 'react-icons/fa'
 
 
 
@@ -28,13 +28,17 @@ export default async function Home() {
             For the best experience, please view on a laptop or iPad. Mobile layout is not styled yet.
           </h2>
           <div className='flex flex-col sm:flex-row gap-3'>
-            <Link href="#about-me" className="btn btn-primary hover:bg-transparent btn-md sm:btn-lg lg:btn-xl text-white"><FaAddressCard className="mr-1 text-2xl" />About Me</Link>
-            <Link title="View and chat with my resume in real time" href="https://about.kyle24.com/" target="_blank" rel="noopener noreferrer" className="btn btn-secondary hover:scale-105 btn-md sm:btn-lg lg:btn-xl text-white"><FaRobot className="mr-1 text-2xl" />Resume Bot</Link>
-            <Link title="Upload a PDF to generate a searchable version with text you can copy and search" href="/ocr" className="btn btn-accent hover:animate-pulse btn-md sm:btn-lg lg:btn-xl text-white"><FaFilePdf className="mr-1 text-xl" /> OCR PDF</Link>
-            <Link title="Play the classic FizzBuzz game or create your own custom versions" href="/games" className="btn btn-info  hover:scale-95 btn-md sm:btn-lg lg:btn-xl text-white"><GiGamepad className="mr-1 text-3xl" />FizzBuzz</Link>
+
+            <Link href="#about-me" className="btn btn-secondary hover:bg-transparent btn-md sm:btn-lg lg:btn-xl text-white"><FaAddressCard className="mr-1 text-2xl" />About Me</Link>
+            <Link title="View and chat with my resume in real time" href="https://about.kyle24.com/" target="_blank" rel="noopener noreferrer" className="btn btn-primary hover:scale-105 btn-md sm:btn-lg lg:btn-xl text-white"><FaRobot className="mr-1 text-2xl" />Resume Bot</Link>
+            <Link title="See all my projects including the resume bot" href="/projects" className="btn btn-accent hover:animate-pulse btn-md sm:btn-lg lg:btn-xl text-white"><FaFolderOpen className="mr-1 text-xl" /> All Projects</Link>
             
 
           </div>
+          <p className="mt-2 italic text-gray-400 text-sm text-center">
+            The <strong>Resume Bot</strong> is my featured project—explore it along with others in <strong>All Projects</strong>.
+          </p>
+
         </main>
 
         <section id="about-me" className="p-20 lg:p-52 lg:pt-24 min-h-screen flex flex-col items-center xl:flex-row bg-black/40 snap-start">

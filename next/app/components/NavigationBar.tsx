@@ -15,18 +15,14 @@ const NavigationBar = () => {
             <ul
                 tabIndex={0}
                 className="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-56 p-2 shadow">
-                <li><Link className = "text-sm sm:text-lg" href="https://about.kyle24.com/" target="_blank" rel="noopener noreferrer">Resume Bot</Link></li>
-                <li><Link className = "text-sm sm:text-lg" href="/ocr">OCR PDF</Link></li>
-                <li><Link className = "text-sm sm:text-lg" href="/games">FizzBuzz</Link></li>
-                <li><Link className = "text-sm sm:text-lg" href="/fuzzing">Fuzzing Viz</Link></li>
+                <li><Link className = "text-sm sm:text-lg" href="/projects">Projects</Link></li>
+                <li><Link className = "text-sm sm:text-lg" href="/#about-me">About</Link></li>
             </ul>
             </div>
         </div>
         <div className="navbar-end hidden xl:flex">
-            <Link className = "btn btn-ghost m-1 text-lg" target="_blank" rel="noopener noreferrer" href="https://about.kyle24.com/">Resume Bot</Link>
-            <Link className = "btn btn-ghost m-1 text-lg" href="/ocr">OCR PDF</Link>
-            <Link className = "btn btn-ghost m-1 text-lg" href="/games">FizzBuzz</Link>
-            <Link className = "btn btn-ghost mr-1 text-lg" href="/fuzzing">Fuzzing Viz</Link>
+            <Link className = "btn btn-ghost mr-1 text-lg" href="/projects">Projects</Link>
+            <Link className = "btn btn-ghost mr-1 text-lg" href="/#about-me">About</Link>
         </div>
     </div>
   )
