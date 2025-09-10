@@ -65,8 +65,7 @@ export default function OCRPage() {
 
     <div className="flex flex-col min-h-screen">
         <NavigationBar/>
-        <BreadCrumbs links={[{text: "OCR", href:""}]}></BreadCrumbs>
-        <div className=" flex flex-grow items-center justify-center bg-black/40 p-6">
+        <div className="pt-32 flex flex-grow items-center justify-center bg-black/40 p-6">
         {/* Card container */}
         
         <div className="bg-slate-900/90 p-8 pt-4 mb-32 rounded-xl shadow-lg w-full max-w-4xl text-center">

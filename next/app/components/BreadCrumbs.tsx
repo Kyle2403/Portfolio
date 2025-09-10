@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 const BreadCrumbs = ({ links }: BreadCrumbsProps) => {
   return (
-    <div className="px-5 font-semibold breadcrumbs text-sm pt-16 mt-2 bg-black/40 text-white">
+    <div className="px-5 font-semibold breadcrumbs text-sm pt-20 bg-black/40 text-white">
       <ul>
         <li>
           <Link href="/">Home</Link>

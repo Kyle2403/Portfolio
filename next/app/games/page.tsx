@@ -28,8 +28,7 @@ const Page =  () => {
   return (
     <main className="flex flex-col min-h-screen bg-black/40">
         <NavigationBar/>
-        <BreadCrumbs links={[{text: "Games", href:""}]}></BreadCrumbs>
-        <div className="flex-grow">
+        <div className="flex-grow pt-16">
           <div className="">
             <h1 className='font-black text-2xl px-6 pb-2 pt-2  text-white'>All Games</h1>
             <div className=''>
