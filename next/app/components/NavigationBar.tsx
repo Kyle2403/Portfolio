@@ -24,6 +24,7 @@ const NavigationBar = () => {
                         <li><Link className = "text-sm sm:text-lg" href="/games/new">New Game</Link></li>
                     </ul>
                 </li>
+                <li><Link className = "text-sm sm:text-lg" href="/fuzzing">Fuzzing Viz</Link></li>
             </ul>
             </div>
         </div>
@@ -39,6 +40,7 @@ const NavigationBar = () => {
                     <li><Link href="/games/new">New Game</Link></li>
                 </ul>
             </div>
+            <Link className = "btn btn-ghost mr-1 text-lg" href="/fuzzing">Fuzzing Viz</Link>
         </div>
     </div>
   )
