@@ -1,10 +1,10 @@
 'use client'
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, ExternalLink, Code, BarChart3, Shield, Clock } from 'lucide-react';
+import { ChevronDown, ChevronUp, Code, BarChart3, Shield, Clock } from 'lucide-react';
 import NavigationBar from '../components/NavigationBar';
 import Footer from '../components/Footer';
 const FuzzingThesisPage = () => {
-  const [expandedSection, setExpandedSection] = useState<string | null>(null);;
+  const [expandedSection, setExpandedSection] = useState<string | null>(null);
   
   const toggleSection = (section: string) => {
     setExpandedSection(expandedSection === section ? null : section);
@@ -22,11 +22,10 @@ const FuzzingThesisPage = () => {
         <div className="bg-white rounded-xl shadow-lg p-8 mb-8 border border-slate-200 hover:bg-gray-100">
           <div className="flex items-center gap-3 mb-4">
             <Shield className="w-8 h-8 text-blue-600" />
-            <h1 className="text-3xl font-bold text-slate-800">Statistical Guidance for Fuzzing Campaigns</h1>
+            <h1 className="text-3xl font-bold text-slate-800">Fuzzing Rule Evaluation</h1>
           </div>
           <p className="text-lg text-slate-600 leading-relaxed mb-4">
-          This project explores a stopping rule for fuzzing campaigns, but this page isn&rsquo;t meant to explain all the details. 
-          Instead, it highlights my data visualization and web development skills by presenting the key figures and insights.
+          Statistical analysis evaluating a stopping rule proposed by earlier study for fuzzing campaigns.
 
           </p>
           <div className="flex flex-wrap gap-3">

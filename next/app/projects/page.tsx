@@ -3,9 +3,14 @@ import React from 'react'
 import NavigationBar from '../components/NavigationBar'
 import Footer from '../components/Footer'
 import { FaChartBar, FaLaptopCode, FaRobot, FaFilePdf, FaBug } from 'react-icons/fa'
+import { FaMapMarkerAlt } from "react-icons/fa";
+import { 
+  FaShieldAlt,     // Shield with checkmark
+  FaShieldVirus,   // Shield with virus (security themed)
+  FaUserShield     // User with shield (protection themed)
+} from 'react-icons/fa';
 import ProjectCard from '../components/ProjectCard'
 import { GiGamepad } from 'react-icons/gi'
-
 const page = () => {
   const softwareProjects = [
     {
@@ -16,7 +21,7 @@ const page = () => {
       isExternal: true,
       color: "from-indigo-500 to-purple-600",
       icon: FaRobot,
-      iconSize: "text-2xl"
+      iconSize: "text-3xl"
     },
     {
       title: "OCR PDF Tool",
@@ -26,7 +31,7 @@ const page = () => {
       isExternal: false,
       color: "from-green-600 to-emerald-600",
       icon: FaFilePdf,
-      iconSize: "text-xl"
+      iconSize: "text-2xl"
     },
     {
       title: "FizzBuzz Game",
@@ -36,20 +41,30 @@ const page = () => {
       isExternal: false,
       color: "from-cyan-500 to-blue-500",
       icon: GiGamepad,
-      iconSize: "text-3xl"
+      iconSize: "text-4xl"
     }
   ];
 
   const dataProjects = [
     {
-      title: "Fuzzing Visualization",
-      description: "Data visualization project analyzing fuzzing test results with charts and insights.",
-      technologies: ["Pandas", "AFL++", "Visualization"],
+      title: "Fuzzing Rule Evaluation",
+      description: "Statistical analysis evaluating a stopping rule proposed by earlier study in bug discovery.",
+      technologies: ["Pandas", "AFL++", "Coverage Analysis"],
       link: "/fuzzing", // Update with actual link
       isExternal: false,
       color: "from-red-600 to-pink-600",
-      icon: FaBug,
-      iconSize: "text-xl"
+      icon: FaShieldAlt,
+      iconSize: "text-2xl"
+    },
+    {
+      title: "Parkland Regulation Analysis",
+      description: "Statistical analysis comparing 2009 vs 2014 Parkland regulations effectiveness using hypothesis testing.",
+      technologies: ["R Programming", "Statistical Testing", "Data Analysis"],
+      link: "/regulation", // Update with actual link
+      isExternal: false,
+      color: "from-amber-600 to-orange-600",
+      icon: FaMapMarkerAlt , // or TrendingDown if you prefer
+      iconSize: "text-2xl"
     }
   ];
 
